@@ -11,7 +11,10 @@ RUN go get -v github.com/go-kit/kit/... \
     && go get -v github.com/canthefason/go-watcher \
     && go install github.com/canthefason/go-watcher/cmd/watcher \
     && go get -u google.golang.org/grpc \
-    && go get -u github.com/golang/protobuf/protoc-gen-go
+    && go get -u github.com/golang/protobuf/protoc-gen-go \
+    && go get -u github.com/go-redis/redis \
+    && go get -u github.com/go-sql-driver/mysql \
+    && go get -u github.com/mattn/go-sqlite3
 
 RUN apt-get update && apt-get install --upgrade unzip
 
