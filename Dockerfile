@@ -30,3 +30,9 @@ RUN go get -v github.com/go-redis/redis \
     && go get -v github.com/mattn/go-sqlite3
 
 RUN go get -v github.com/go-swagger/go-swagger/cmd/swagger
+
+# For debugger
+RUN go get -v github.com/go-delve/delve/cmd/dlv \
+    && go get -v github.com/sam016/go-watcher/watcher \
+    && go build -v -o $GOPATH/bin/watcher-dl github.com/sam016/go-watcher/watcher/cmd/watcher \
+    && chmod 755 $GOPATH/bin/watcher-dl
